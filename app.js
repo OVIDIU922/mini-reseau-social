@@ -44,5 +44,79 @@ document.addEventListener("DOMContentLoaded", () => {
   
       postsContainer.appendChild(postDiv);
     });
-  });
+
+    
+     // Ajout des réactions aux posts (Like / Dislike / Love)
+  function createPostElement(post) {
+    const postDiv = document.createElement('div');
+    postDiv.classList.add('post');
+  
+    // Titre de l'utilisateur
+    const userDiv = document.createElement('h3');
+    userDiv.textContent = post.user;
+    postDiv.appendChild(userDiv);
+  
+    // Texte du post
+    const textDiv = document.createElement('p');
+    textDiv.textContent = post.text;
+    postDiv.appendChild(textDiv);
+  
+    // Image du post
+    if (post.image) {
+      const img = document.createElement('img');
+      img.src = post.image;
+      postDiv.appendChild(img);
+    }
+  
+    // Section des réactions
+    const reactionsDiv = document.createElement('div');
+    reactionsDiv.classList.add('reactions');
+  
+    // Boutons de réaction
+    const likeButton = createReactionButton('like', post.reactions.like);
+    const loveButton = createReactionButton('love', post.reactions.love);
+    const dislikeButton = createReactionButton('dislike', post.reactions.dislike);
+  
+    reactionsDiv.appendChild(likeButton);
+    reactionsDiv.appendChild(loveButton);
+    reactionsDiv.appendChild(dislikeButton);
+    
+    postDiv.appendChild(reactionsDiv);
+  
+    return postDiv;
+  }
+  
+  // Fonction pour créer les boutons de réaction
+  function createReactionButton(type, count) {
+    const button = document.createElement('button');
+    button.classList.add(type);
+    button.innerHTML = `${type} (${count})`;
+  
+    button.onclick = () => {
+      // Incrémenter le compteur de la réaction
+      count++;
+      button.innerHTML = `${type} (${count})`;
+  
+      // Ajouter une animation de particules
+      showReactionParticles(type);
+    };
+  
+    return button;
+  }
+  
+  // Fonction pour afficher des particules
+  function showReactionParticles(type) {
+    const particlesDiv = document.createElement('div');
+    particlesDiv.classList.add('particles', type);
+    
+    document.body.appendChild(particlesDiv);
+  
+    // Animation qui disparaît après un court délai
+    setTimeout(() => {
+      particlesDiv.remove();
+    }, 1000);
+  }
+});
+
+  
   
