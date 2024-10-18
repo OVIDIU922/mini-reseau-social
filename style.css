@@ -1,16 +1,16 @@
 /* Styles de base */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0e0e0;
+    background-color: #f0f0f3;
     color: #333;
     margin: 0;
     padding: 0;
 }
-  
+
 header {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
 }
 
@@ -29,21 +29,13 @@ main {
     padding: 20px;
 }
 
-/* Styles pour le feed */
 #feed {
     margin-bottom: 40px;
 }
 
-/*.post {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-}*/
 .post {
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
@@ -54,51 +46,7 @@ main {
     border-radius: 10px;
 }
 
-/* Styles pour la messagerie */
-#messagerie {
-    margin-bottom: 40px;
-}
-
-#conversations-container {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-}
-
-#chat-container {
-    margin-top: 20px;
-}
-
-/* Styles pour la liste d'amis */
-#amis {
-    margin-bottom: 40px;
-}
-
-#friend-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#friend-list li {
-    background-color: #e0e0e0;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-    cursor: move;
-}
-
-input[type="text"] {
-    padding: 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: none;
-    margin-bottom: 20px;
-    box-shadow: inset 7px 7px 15px #b0b0b0, inset -7px -7px 15px #ffffff;
-}
-
-/*boutons de réaction et les particules*/
+/* Reactions avec des icônes */
 .reactions {
     display: flex;
     gap: 10px;
@@ -108,80 +56,127 @@ input[type="text"] {
 .reactions button {
     background-color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-    cursor: pointer;
-}
-/*button {
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: none;
-    background-color: #e0e0e0;
-    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
     box-shadow: 5px 5px 10px #b0b0b0, -5px -5px 10px #ffffff;
-}*/
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
 
 .reactions button:hover {
-    box-shadow: 7px 7px 15px #f7f5f4, -7px -7px 15px #dededa;
+    box-shadow: 5px 5px 10px #ffffff, -5px -5px 10px #b0b0b0;
 }
 
-.particles {
-    position: fixed;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    animation: particleAnimation 1s ease-out;
+.comment-section input {
+    width: 40%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
-.particles.like {
+.comment-section button {
+    margin-top: 5px;
+    padding: 5px 10px;
     background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.particles.love {
-    background-color: #FF4081;
+/* Messagerie */
+#messagerie {
+    margin-bottom: 40px;
+    cursor: pointer;
 }
 
-.particles.dislike {
-    background-color: #F44336;
-}
-
-@keyframes particleAnimation {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-
-/*Ajoutons des styles pour la messagerie.*/
-.conversation {
+#conversations-container {
     background-color: #e0e0e0;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-  }
-  
-  .message {
-    padding: 5px;
-    margin: 5px 0;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-/* CSS pour le drag and drop*/
-#friend-list li {
-    cursor: move;
-    transition: background-color 0.2s ease;
+.chat-container {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
 }
-  
-#friend-list li:active {
-    background-color: #d0d0d0;
+
+#chat-history {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 7px 7px 15px #b0b0b0, inset -7px -7px 15px #ffffff;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Liste d'Amis*/
+#search-friends {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
+}
+
+.draggable-list {
+    padding: 0;
+    list-style-type: none; /* Supprime les puces de la liste */
+}
+
+.draggable-list li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: move; 
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.draggable-list li:hover {
+    background-color: #e0e0e0;
+}
+
+/* footer*/
   
 footer {
     text-align: center;
@@ -189,4 +184,25 @@ footer {
     background-color: #f0f0f0;
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
     position: relative; /* Permet de le placer en bas de la page si nécessaire */
+}
+
+
+/* Media queries pour rendre le design du feed responsive */
+@media (max-width: 600px) {
+    #posts-container {
+        padding: 15px; /* Réduit le padding sur petits écrans */
+    }
+
+    .post {
+        padding: 10px; /* Ajuste le padding des posts sur petits écrans */
+    }
+
+    .reactions {
+        flex-direction: column; /* Empile les boutons de réaction */
+        align-items: flex-start; /* Aligne les boutons à gauche */
+    }
+
+    .reactions button {
+        margin-bottom: 5px; /* Espace entre les boutons de réaction */
+    }
 }

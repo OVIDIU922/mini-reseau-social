@@ -1,50 +1,54 @@
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Réseau Social</title>
+    <title>Mini reseau</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- En-tête de la page -->
     <header>
-        <h1>Bienvenue sur le Mini Réseau Social</h1>
+        <h1>Mon Mini-Réseau Social</h1>
         <nav>
-          <a href="#feed">Feed</a>
-          <a href="#messagerie">Messagerie</a>
-          <a href="#amis">Liste d'Amis</a>
+            <a href="#feed">Fil d'Actualité</a>
+            <a href="#messagerie">Messagerie</a>
+            <a href="#amis">Liste d'Amis</a>
         </nav>
     </header>
 
     <main>
-        <!-- Section du Feed -->
+        <!-- Section du fil d'actualité -->
         <section id="feed">
-          <h2>Fil d'actualités</h2>
-          <div id="posts-container">
-            <!-- Les posts seront générés ici via JS -->
-          </div>
+            <h2>Fil d'Actualité</h2>
+            <div id="posts-container"></div>
         </section>
-    
-        <!-- Section Messagerie -->
+
+        <!-- Section de la messagerie -->
         <section id="messagerie">
-          <h2>Messagerie</h2>
-          <div id="conversations-container">
-            <!-- Les conversations seront générées ici via JS -->
-          </div>
-          <div id="chat-container">
-            <!-- L'historique des messages et l'envoi de nouveaux messages -->
-          </div>
+            <h2>Messagerie</h2>
+            <div id="conversations-container">
+                <!-- Les conversations seront générées ici via JS -->
+            </div>
+            <div class="chat-container">
+                <div id="chat-history">
+                    <!-- L'historique des messages sera généré ici -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Écrire un message...">
+                    <button id="send-message">Envoyer</button>
+                </div>
+            </div>
         </section>
-    
-        <!-- Section Liste d'Amis -->
+
+        <!-- Section de la liste d'amis -->
         <section id="amis">
-          <h2>Liste d'Amis</h2>
-          <input type="text" id="search-friends" placeholder="Rechercher un ami...">
-          <ul id="friend-list">
-            <!-- La liste d'amis sera ici -->
-            <li draggable="true">Alice</li>
-            <li draggable="true">Bob</li>
-            <li draggable="true">Charlie</li>
-          </ul>
+            <h2>Liste d'Amis</h2>
+            <input type="text" id="search-friends" placeholder="Rechercher des amis..." />
+            <ul id="friend-list" class="draggable-list">
+                <li draggable="true" data-name="Alice">Alice</li>
+                <li draggable="true" data-name="Bob">Bob</li>
+                <li draggable="true" data-name="Charlie">Charlie</li>
+            </ul>
         </section>
     </main>
 
@@ -52,6 +56,7 @@
         <p>&copy; 2024 Mini Réseau Social. Tous droits réservés.</p>
     </footer>
 
-    <script src="app.js"></script> 
+    <script src="script.js"></script>
+
 </body>
 </html>
