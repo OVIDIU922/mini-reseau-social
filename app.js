@@ -46,6 +46,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     
+    // Fonction pour créer la section des commentaires
+    function createCommentSection(post) {
+        const commentSection = document.createElement('div');
+        commentSection.classList.add('comment-section');
+    
+        // Affichage des commentaires existants
+        post.comments.forEach(comment => {
+        const commentDiv = document.createElement('p');
+        commentDiv.classList.add('comment');
+        commentDiv.textContent = `${comment.user}: ${comment.text}`;
+        commentSection.appendChild(commentDiv);
+        });
+    
+        // Input pour ajouter un nouveau commentaire
+        const commentInput = document.createElement('input');
+        commentInput.type = 'text';
+        commentInput.placeholder = 'Ajouter un commentaire...';
+        commentSection.appendChild(commentInput);
+    
+        // Bouton pour ajouter le commentaire
+        const commentButton = document.createElement('button');
+        commentButton.textContent = 'Commenter';
+        commentButton.onclick = () => {
+        if (commentInput.value.trim() !== '') {
+            const newComment = {
+            user: "Alice", // L'utilisateur actuel
+            text: commentInput.value
+            };
+            post.comments.push(newComment); // Ajouter le nouveau commentaire à la liste
+            const commentDiv = document.createElement('p');
+            commentDiv.classList.add('comment');
+            commentDiv.textContent = `${newComment.user}: ${newComment.text}`;
+            commentSection.appendChild(commentDiv); // Afficher le nouveau commentaire
+            commentInput.value = ''; // Réinitialiser le champ après soumission
+        }
+        };
+        commentSection.appendChild(commentButton);
+    
+        return commentSection;
+    }
      // Ajout des réactions aux posts (Like / Dislike / Love)
   function createPostElement(post) {
     const postDiv = document.createElement('div');
@@ -86,36 +126,48 @@ document.addEventListener("DOMContentLoaded", () => {
     return postDiv;
   }
   
-  // Fonction pour créer les boutons de réaction
-  function createReactionButton(type, count) {
-    const button = document.createElement('button');
-    button.classList.add(type);
-    button.innerHTML = `${type} (${count})`;
-  
-    button.onclick = () => {
-      // Incrémenter le compteur de la réaction
-      count++;
-      button.innerHTML = `${type} (${count})`;
-  
-      // Ajouter une animation de particules
-      showReactionParticles(type);
-    };
-  
-    return button;
-  }
-  
-  // Fonction pour afficher des particules
-  function showReactionParticles(type) {
-    const particlesDiv = document.createElement('div');
-    particlesDiv.classList.add('particles', type);
+  // Ajout de la section des commentaires dans le post
+  posts.forEach(post => {
+    const postDiv = createPostElement(post);
     
-    document.body.appendChild(particlesDiv);
+    const commentSection = createCommentSection(post);
+    postDiv.appendChild(commentSection);
+    
+    postsContainer.appendChild(postDiv);
+  });
   
-    // Animation qui disparaît après un court délai
-    setTimeout(() => {
-      particlesDiv.remove();
-    }, 1000);
-  }
+  
+  // Fonction pour créer les boutons de réaction
+    function createReactionButton(type, count, postDiv) {
+        const button = document.createElement('button');
+        button.classList.add(type);
+        button.innerHTML = `${type} (${count})`;
+    
+        button.onclick = () => {
+        // Incrémenter le compteur de la réaction
+        count++;
+        button.innerHTML = `${type} (${count})`;
+    
+        // Ajouter une animation de particules au post spécifique
+        showReactionParticles(type, postDiv);
+        };
+    
+        return button;
+    }  
+
+  // Fonction pour afficher des particules sur le post spécifique
+    function showReactionParticles(type, postDiv) {
+        const particlesDiv = document.createElement('div');
+        particlesDiv.classList.add('particles', type);
+        
+        postDiv.appendChild(particlesDiv); // Ajouter les particules au post spécifique
+
+        // Animation qui disparaît après un court délai
+        setTimeout(() => {
+        particlesDiv.remove();
+        }, 1000);
+    }
+  
 
    // affichera une liste de conversations
    const conversations = [
@@ -184,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     chatContainer.appendChild(sendButton);
   }
-  
+
   // Gestion de la liste d’amis avec Drag and Drop
   const friendsList = document.getElementById('friend-list');
     let draggedItem = null;

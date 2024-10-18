@@ -34,12 +34,19 @@ main {
     margin-bottom: 40px;
 }
 
-.post {
+/*.post {
     background-color: #e0e0e0;
     border-radius: 10px;
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
     padding: 20px;
     margin-bottom: 20px;
+}*/
+.post {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
 }
 
 .post img {
@@ -106,9 +113,17 @@ input[type="text"] {
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
     cursor: pointer;
 }
+/*button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #b0b0b0, -5px -5px 10px #ffffff;
+}*/
 
 .reactions button:hover {
-    box-shadow: 7px 7px 15px #8a8a8a, -7px -7px 15px #ffffff;
+    box-shadow: 7px 7px 15px #f7f5f4, -7px -7px 15px #dededa;
 }
 
 .particles {
@@ -168,4 +183,10 @@ input[type="text"] {
     background-color: #d0d0d0;
 }
   
-  
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    position: relative; /* Permet de le placer en bas de la page si nécessaire */
+}
