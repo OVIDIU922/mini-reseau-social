@@ -156,5 +156,16 @@ input[type="text"] {
   .message {
     padding: 5px;
     margin: 5px 0;
-  }
+}
+
+/* CSS pour le drag and drop*/
+#friend-list li {
+    cursor: move;
+    transition: background-color 0.2s ease;
+}
+  
+#friend-list li:active {
+    background-color: #d0d0d0;
+}
+  
   
