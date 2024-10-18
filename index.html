@@ -1,0 +1,53 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Réseau Social</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur le Mini Réseau Social</h1>
+        <nav>
+          <a href="#feed">Feed</a>
+          <a href="#messagerie">Messagerie</a>
+          <a href="#amis">Liste d'Amis</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section du Feed -->
+        <section id="feed">
+          <h2>Fil d'actualités</h2>
+          <div id="posts-container">
+            <!-- Les posts seront générés ici via JS -->
+          </div>
+        </section>
+    
+        <!-- Section Messagerie -->
+        <section id="messagerie">
+          <h2>Messagerie</h2>
+          <div id="conversations-container">
+            <!-- Les conversations seront générées ici via JS -->
+          </div>
+          <div id="chat-container">
+            <!-- L'historique des messages et l'envoi de nouveaux messages -->
+          </div>
+        </section>
+    
+        <!-- Section Liste d'Amis -->
+        <section id="amis">
+          <h2>Liste d'Amis</h2>
+          <input type="text" id="search-friends" placeholder="Rechercher un ami...">
+          <ul id="friend-list">
+            <!-- La liste d'amis sera ici -->
+            <li draggable="true">Alice</li>
+            <li draggable="true">Bob</li>
+            <li draggable="true">Charlie</li>
+          </ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script> 
+</body>
+</html>
