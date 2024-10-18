@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "user": "Alice",
+      "user": "Daniela",
       "text": "Voici mon premier post!",
       "image": "images/pexels-photo-1.jpeg",
       "reactions": {"like": 10, "love": 5, "dislike": 2},
@@ -13,6 +13,6 @@
       "text": "Quelle belle journée !",
       "image": null,
       "reactions": {"like": 7, "love": 2, "dislike": 1},
-      "comments": [{"user": "Alice", "text": "Je suis d'accord !"}]
+      "comments": [{"user": "Daniela", "text": "Je suis d'accord !"}]
     }
 ]

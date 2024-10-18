@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const posts = [
     {
       "id": 1,
-      "user": "Alice",
+      "user": "Daniela",
       "text": "Voici mon premier post!",
       "image": "images/pexels-photo-.jpeg",
       "reactions": {"like": 10, "love": 5, "dislike": 2},
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "text": "Quelle belle journée !",
       "image": null,
       "reactions": {"like": 7, "love": 2, "dislike": 1},
-      "comments": [{"user": "Alice", "text": "Je suis d'accord !"}]
+      "comments": [{"user": "Daniela", "text": "Je suis d'accord !"}]
     }
   ];
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       commentButton.onclick = () => {
           if (commentInput.value.trim() !== '') {
               const newComment = {
-                  user: "Alice",
+                  user: "Daniela",
                   text: commentInput.value
               };
               post.comments.push(newComment);
@@ -149,7 +149,7 @@ function loadMessages(conv) {
 
   sendMessageButton.onclick = () => {
       const newMessage = {
-          user: "Alice", // Remplacez par l'utilisateur actuel
+          user: "Daniela", // Remplacez par l'utilisateur actuel
           text: messageInput.value,
           timestamp: new Date().toLocaleTimeString() // Obtenir l'heure actuelle
       };
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", loadConversations);
 
 // Liste d'amis //
 const friends = [
-  { id: 1, name: 'Alice' },
+  { id: 1, name: 'Daniela' },
   { id: 2, name: 'Bob' },
   { id: 3, name: 'Charlie' },
 ];

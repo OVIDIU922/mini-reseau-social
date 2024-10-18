@@ -1,18 +1,18 @@
 [
     {
       "id": 1,
-      "participants": ["Alice", "Bob"],
+      "participants": ["Daniela", "Bob"],
       "messages": [
-        {"user": "Alice", "text": "Salut Bob!", "timestamp": "10:30"},
-        {"user": "Bob", "text": "Salut Alice!", "timestamp": "10:31"}
+        {"user": "Daniela", "text": "Salut Bob!", "timestamp": "10:30"},
+        {"user": "Bob", "text": "Salut Daniela!", "timestamp": "10:31"}
       ]
     },
     {
       "id": 2,
-      "participants": ["Alice", "Charlie"],
+      "participants": ["Daniela", "Charlie"],
       "messages": [
-        {"user": "Alice", "text": "Hello Charlie!", "timestamp": "10:40"},
-        {"user": "Charlie", "text": "Hey Alice!", "timestamp": "10:41"}
+        {"user": "Daniela", "text": "Hello Charlie!", "timestamp": "10:40"},
+        {"user": "Charlie", "text": "Hey Daniela!", "timestamp": "10:41"}
       ]
     }
   ]
