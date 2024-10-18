@@ -8,137 +8,153 @@ body {
 }
   
 header {
-text-align: center;
-padding: 20px;
-background-color: #f0f0f0;
-box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
 }
 
 nav a {
-margin: 0 10px;
-text-decoration: none;
-color: #333;
-font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
 h1, h2 {
-font-size: 24px;
+    font-size: 24px;
 }
 
 main {
-padding: 20px;
+    padding: 20px;
 }
 
 /* Styles pour le feed */
 #feed {
-margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .post {
-background-color: #e0e0e0;
-border-radius: 10px;
-box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-padding: 20px;
-margin-bottom: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .post img {
-max-width: 100%;
-border-radius: 10px;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Styles pour la messagerie */
 #messagerie {
-margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 #conversations-container {
-background-color: #e0e0e0;
-padding: 10px;
-border-radius: 10px;
-box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
 }
 
 #chat-container {
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 /* Styles pour la liste d'amis */
 #amis {
-margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 #friend-list {
-list-style-type: none;
-padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 #friend-list li {
-background-color: #e0e0e0;
-padding: 10px;
-margin: 10px 0;
-border-radius: 10px;
-box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-cursor: move;
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    cursor: move;
 }
 
 input[type="text"] {
-padding: 10px;
-width: 100%;
-border-radius: 10px;
-border: none;
-margin-bottom: 20px;
-box-shadow: inset 7px 7px 15px #b0b0b0, inset -7px -7px 15px #ffffff;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: inset 7px 7px 15px #b0b0b0, inset -7px -7px 15px #ffffff;
 }
 
 /*boutons de réaction et les particules*/
 .reactions {
-display: flex;
-gap: 10px;
-margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .reactions button {
-background-color: #fff;
-border: none;
-padding: 10px;
-border-radius: 10px;
-box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
-cursor: pointer;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    cursor: pointer;
 }
 
 .reactions button:hover {
-box-shadow: 7px 7px 15px #8a8a8a, -7px -7px 15px #ffffff;
+    box-shadow: 7px 7px 15px #8a8a8a, -7px -7px 15px #ffffff;
 }
 
 .particles {
-position: fixed;
-width: 100px;
-height: 100px;
-background-color: rgba(0, 0, 0, 0.1);
-border-radius: 50%;
-animation: particleAnimation 1s ease-out;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    animation: particleAnimation 1s ease-out;
 }
 
 .particles.like {
-background-color: #4CAF50;
+    background-color: #4CAF50;
 }
 
 .particles.love {
-background-color: #FF4081;
+    background-color: #FF4081;
 }
 
 .particles.dislike {
-background-color: #F44336;
+    background-color: #F44336;
 }
 
 @keyframes particleAnimation {
-from {
-    transform: scale(1);
-    opacity: 1;
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
 }
-to {
-    transform: scale(3);
-    opacity: 0;
-}
-}
+
+/*Ajoutons des styles pour la messagerie.*/
+.conversation {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+  }
+  
+  .message {
+    padding: 5px;
+    margin: 5px 0;
+  }
+  
