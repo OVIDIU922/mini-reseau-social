@@ -116,6 +116,75 @@ document.addEventListener("DOMContentLoaded", () => {
       particlesDiv.remove();
     }, 1000);
   }
+
+   // affichera une liste de conversations
+   const conversations = [
+    {
+      "id": 1,
+      "participants": ["Alice", "Bob"],
+      "messages": [
+        {"user": "Alice", "text": "Salut Bob!", "timestamp": "10:30"},
+        {"user": "Bob", "text": "Salut Alice!", "timestamp": "10:31"}
+      ]
+    },
+    {
+      "id": 2,
+      "participants": ["Alice", "Charlie"],
+      "messages": [
+        {"user": "Alice", "text": "Hello Charlie!", "timestamp": "10:40"},
+        {"user": "Charlie", "text": "Hey Alice!", "timestamp": "10:41"}
+      ]
+    }
+  ];
+  
+  // Affichage de la liste des conversations
+  const conversationsContainer = document.getElementById('conversations-container');
+  conversations.forEach(conversation => {
+    const conversationDiv = document.createElement('div');
+    conversationDiv.classList.add('conversation');
+    conversationDiv.textContent = `Conversation avec ${conversation.participants.join(', ')}`;
+  
+    conversationDiv.onclick = () => {
+      displayChat(conversation);
+    };
+  
+    conversationsContainer.appendChild(conversationDiv);
+  });
+  
+  // Affichage de l'historique des messages
+  function displayChat(conversation) {
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.innerHTML = ''; // On efface le contenu précédent
+  
+    conversation.messages.forEach(message => {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.textContent = `${message.user} (${message.timestamp}): ${message.text}`;
+      
+      chatContainer.appendChild(messageDiv);
+    });
+  
+    // Ajouter la possibilité d'envoyer de nouveaux messages
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Envoyer un message...';
+    chatContainer.appendChild(input);
+  
+    const sendButton = document.createElement('button');
+    sendButton.textContent = 'Envoyer';
+    sendButton.onclick = () => {
+      const newMessage = {
+        user: "Alice", // L'utilisateur actuel
+        text: input.value,
+        timestamp: new Date().toLocaleTimeString()
+      };
+      conversation.messages.push(newMessage);
+      displayChat(conversation); // Réafficher la conversation
+    };
+  
+    chatContainer.appendChild(sendButton);
+  }
+  
 });
 
   
