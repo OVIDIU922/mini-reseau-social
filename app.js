@@ -185,6 +185,24 @@ document.addEventListener("DOMContentLoaded", () => {
     chatContainer.appendChild(sendButton);
   }
   
+  // Gestion de la liste d’amis avec Drag and Drop
+  const friendsList = document.getElementById('friend-list');
+    let draggedItem = null;
+
+    friendsList.addEventListener('dragstart', (e) => {
+    draggedItem = e.target;
+    });
+
+    friendsList.addEventListener('dragover', (e) => {
+    e.preventDefault(); // Nécessaire pour permettre le drop
+    });
+
+    friendsList.addEventListener('drop', (e) => {
+    if (e.target.tagName === 'LI' && draggedItem !== e.target) {
+        friendsList.insertBefore(draggedItem, e.target);
+    }
+    });
+  
 });
 
   
